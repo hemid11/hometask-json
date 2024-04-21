@@ -17,14 +17,22 @@ function addRow() {
 
     const moviesWrapper = document.querySelector('.movies-wrapper');
     const newMovieCard = document.createElement('div');
-    newMovieCard.classList.add('col-md-4', 'mb-4');
+    newMovieCard.classList.add('col-lg-3', 'col-md-6', 'col-sm-12');
     newMovieCard.innerHTML = `
         <div class="card">
+            <div class="card-img">
+                <img class="card-img-top" src="./assets/media/default-poster.jpg" alt="${firstName}">
+                title="${firstName}"
+            </div>
             <div class="card-body">
-                <h5 class="card-title">${firstName}</h5>
+                <h3 class="card-title">${firstName}</h3>
                 <p class="card-text">${lastName}</p>
-                <p class="card-text">${contactTitle}</p>
-                <p class="card-text">${country}</p>
+                <button class="btn btn-outline-primary edit-btn"  data-bs-toggle="modal" data-bs-target="#editModal">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                <button class="btn btn-outline-danger delete-btn">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
             </div>
         </div>
     `;
